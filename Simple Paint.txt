@@ -1,0 +1,90 @@
+from turtle import*
+
+t = Turtle()
+t.shape('turtle')
+t.shape('circle')
+t.pensize(5)
+def draw(x,y):
+    t.goto(x,y)
+t.ondrag(draw)
+
+def move(x,y):
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+
+scr = t.getscreen()
+scr.onscreenclick(move)
+
+def setGreen():
+    t.color('green')
+
+scr.onkey(setGreen,'g')
+
+def setRed():
+    t.color('red')
+
+scr.onkey(setRed,'r')
+
+def setBlue():
+    t.color('blue')
+
+scr.onkey(setBlue,'b')
+
+def setViolet():
+    t.color('violet')
+
+scr.onkey(setViolet,'v')
+
+def setYellow():
+    t.color('yellow')
+
+scr.onkey(setYellow,'y')
+scr.listen()
+
+def stepRight():
+    t.goto(t.xcor() + 8, t.ycor())
+scr.onkey(stepRight,'Right')
+
+def stepLeft():
+    t.goto(t.xcor() - 8, t.ycor())
+scr.onkey(stepLeft,'Left')
+
+def stepDown():
+    t.goto(t.xcor(), t.ycor()-8)
+scr.onkey(stepDown,'Down')
+
+def stepUp():
+    t.goto(t.xcor(), t.ycor() +8)
+scr.onkey(stepUp,'Up')
+
+def nach():
+    t.begin_fill()
+
+def kon():
+    t.end_fill()
+
+scr.onkey(nach, 'z')
+scr.onkey(kon, 'x')
+
+def kvad():
+    for i in range(4):
+        t.forward(50)
+        t.left(90)
+scr.onkey(kvad, 'k')
+
+def crug():
+    t.circle(25)
+scr.onkey(crug, 'c')
+
+def trel():
+    for i in range(3):
+        t.forward(50)
+        t.left(120)
+scr.onkey(trel, 't')
+
+def shestiygol():
+    for i in range(5):
+        t.forward(100)
+        t.left(72)
+scr.onkey(shestiygol, 's')
